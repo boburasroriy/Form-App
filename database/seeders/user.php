@@ -16,8 +16,14 @@ class user extends Seeder
         \App\Models\User::create([
             'role_id' =>1,
             'name'=>'Manager',
-            'email' =>'boburasrorov2005"gmail.com',
+            'email' =>'boburasrorov2005@gmail.com',
             'password'=>Hash::make('B1234a1234'),
+        ]);
+        \App\Models\User::create([
+            'role_id' =>2,
+            'name'=>'Client',
+            'email' =>'bobur@gmail.com',
+            'password'=>Hash::make('bob'),
         ]);
 //        User::class([
 //
