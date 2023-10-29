@@ -10,83 +10,32 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                 @if(auth()->user()->name == 'Manager')
-                        "You are manager"
-                        <!-- component -->
-                        <!-- This is an example component -->
+
+                 @foreach($applications as $aplication)
                         <div class='py-5'>  <div class="rounded-xl border p-5 shadow-md w-9/12 bg-dark">
                                 <div class="flex w-full items-center justify-between border-b pb-3">
                                     <div class="flex items-center space-x-3">
                                         <div class="h-8 w-8 rounded-full bg-slate-400 bg-[url('https://i.pravatar.cc/32')]"></div>
-                                        <div class="text-lg font-bold text-dark-700 ">Joe Smith</div>
+                                        <div class="text-lg font-bold text-dark-700 "></div>
                                     </div>
                                     <div class="flex items-center space-x-8">
-                                        <button class="rounded-2xl border bg-dark-100 px-3 py-1  text-xs font-bold">ID:</button>
-                                        <div class="text-xs  ">Created at: </div>
+                                        <button class="rounded-2xl border bg-dark-100 px-3 py-1  text-xs font-bold">{{ $aplication->id }}</button>
+                                        <div class="text-xs  ">Created at:  {{ $aplication->created_at}}</div>
                                     </div>
                                 </div>
 
                                 <div class="mt-4 mb-6">
-                                    <div class="mb-3 text-xl font-bold">Nulla sed leo tempus, feugiat velit vel, rhoncus neque?</div>
-                                    <div class="text-sm ">Aliquam a tristique sapien, nec bibendum urna. Maecenas convallis dignissim turpis, non suscipit mauris interdum at. Morbi sed gravida nisl, a pharetra nulla. Etiam tincidunt turpis leo, ut mollis ipsum consectetur quis. Etiam faucibus est risus, ac condimentum mauris consequat nec. Curabitur eget feugiat massa</div>
+                                    <div class="mb-3 text-xl font-bold">{{ $aplication->subject }}</div>
+                                    <div class="text-sm ">{{ $aplication->message }}</div>
                                 </div>
 
                                 <div>
-                                    <div class="flex items-center justify-between text-slate-500">
-                                        <p >Email</p>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
+                        @endforeach
 
-                        <div class='py-5'>  <div class="rounded-xl border p-5 shadow-md w-9/12 bg-dark">
-                                <div class="flex w-full items-center justify-between border-b pb-3">
-                                    <div class="flex items-center space-x-3">
-                                        <div class="h-8 w-8 rounded-full bg-slate-400 bg-[url('https://i.pravatar.cc/32')]"></div>
-                                        <div class="text-lg font-bold text-dark-700 ">Joe Smith</div>
-                                    </div>
-                                    <div class="flex items-center space-x-8">
-                                        <button class="rounded-2xl border bg-dark-100 px-3 py-1  text-xs font-bold">ID:</button>
-                                        <div class="text-xs  ">Created at: </div>
-                                    </div>
-                                </div>
-
-                                <div class="mt-4 mb-6">
-                                    <div class="mb-3 text-xl font-bold">Nulla sed leo tempus, feugiat velit vel, rhoncus neque?</div>
-                                    <div class="text-sm ">Aliquam a tristique sapien, nec bibendum urna. Maecenas convallis dignissim turpis, non suscipit mauris interdum at. Morbi sed gravida nisl, a pharetra nulla. Etiam tincidunt turpis leo, ut mollis ipsum consectetur quis. Etiam faucibus est risus, ac condimentum mauris consequat nec. Curabitur eget feugiat massa</div>
-                                </div>
-
-                                <div>
-                                    <div class="flex items-center justify-between text-slate-500">
-                                        <p >Email</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class='py-5'>  <div class="rounded-xl border p-5 shadow-md w-9/12 bg-dark">
-                                <div class="flex w-full items-center justify-between border-b pb-3">
-                                    <div class="flex items-center space-x-3">
-                                        <div class="h-8 w-8 rounded-full bg-slate-400 bg-[url('https://i.pravatar.cc/32')]"></div>
-                                        <div class="text-lg font-bold text-dark-700 ">Joe Smith</div>
-                                    </div>
-                                    <div class="flex items-center space-x-8">
-                                        <button class="rounded-2xl border bg-dark-100 px-3 py-1  text-xs font-bold">ID:</button>
-                                        <div class="text-xs  ">Created at: </div>
-                                    </div>
-                                </div>
-
-                                <div class="mt-4 mb-6">
-                                    <div class="mb-3 text-xl font-bold">Nulla sed leo tempus, feugiat velit vel, rhoncus neque?</div>
-                                    <div class="text-sm ">Aliquam a tristique sapien, nec bibendum urna. Maecenas convallis dignissim turpis, non suscipit mauris interdum at. Morbi sed gravida nisl, a pharetra nulla. Etiam tincidunt turpis leo, ut mollis ipsum consectetur quis. Etiam faucibus est risus, ac condimentum mauris consequat nec. Curabitur eget feugiat massa</div>
-                                </div>
-
-                                <div>
-                                    <div class="flex items-center justify-between text-slate-500">
-                                        <p >Email</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     @elseif(auth()->user()->name == 'Client')
                         "You are Client"
                         <!-- component -->

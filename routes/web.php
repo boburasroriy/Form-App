@@ -1,20 +1,19 @@
 <?php
 
 use App\Http\Controllers\Application;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+Route::group(['middleware' =>'auth'], function(){
+    Route::get('/', [MainController::class, 'Main'])->name('main');
+    Route::get('/dashboard', [ MainController::class, 'dashboard'])->name('dashboard');
+    Route::resource('application', Application::class);
+});
 
 
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware('auth');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
-Route::resource('application', Application::class);
 
 
 Route::middleware('auth')->group(function () {
